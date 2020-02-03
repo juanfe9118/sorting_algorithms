@@ -1,24 +1,6 @@
 #include "sort.h"
 
 /**
- * listint_len - returns the number of elements in a linked dlistint_t list
- * @h: linkedlist to get the size for
- * Return: the size of the list
- */
-size_t listint_len(const listint_t *h)
-{
-	size_t i;
-
-	if (h == NULL)
-		return (0);
-	for (i = 0; h != NULL; i++)
-	{
-		h = h->next;
-	}
-	return (i);
-}
-
-/**
  * insertion_sort_list - sorts a doubly linked list of integers in ascending
  * order using the insertion sort algorithm
  * @list: the doubly linked list to sort
@@ -28,12 +10,8 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *tail = (*list)->next;
 	listint_t *b_i = NULL, *ins = NULL;
-	size_t i;
 
 	if (*list == NULL)
-		return;
-	i = listint_len(*list);
-	if (i <= 2)
 		return;
 	while (tail != NULL)
 	{
